@@ -10,12 +10,20 @@ type StatisticsProps = {
 const Statistics: FC<StatisticsProps> = ({ redux }) => {
 	const { infoCount, warningCount, errorCount, total } = redux;
 	return (
-		<div>
-			<h2>Statistics</h2>
-			<p>Info: {infoCount}</p>
-			<p>Warnings: {warningCount}</p>
-			<p>Errors: {errorCount}</p>
-			<p>Total: {total}</p>
+		<div className="stats-container">
+			<div className="stats">
+				<h2>Statistics</h2>
+				<span>
+					Info: <span className="severity-text info">{infoCount}</span>
+				</span>
+				<span>
+					Warnings: <span className="severity-text warning">{warningCount}</span>
+				</span>
+				<span>
+					Errors: <span className="severity-text error">{errorCount}</span>
+				</span>
+				<span>Total: {total}</span>
+			</div>
 		</div>
 	);
 };

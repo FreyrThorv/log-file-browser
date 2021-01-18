@@ -1,0 +1,21 @@
+.stats-container {
+	height: 95px;
+}
+
+.stats {
+	position: fixed;
+	background-color: white;
+	width: 940px;
+	height: 11%;
+	padding: 0px 10px;
+	border-bottom: 2px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+}
+
+.stats h2 {
+	margin-bottom: 10px;
+}
+
+.stats span {
+	margin-right: 5px;
+}
