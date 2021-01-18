@@ -1,8 +1,25 @@
 body {
 	color: #444;
+	background-color: #ede8e8;
 }
 
 .app {
 	margin: 0 auto;
 	max-width: 940px;
+}
+
+.severity-text {
+	display: inline-block;
+	font-weight: bold;
+	padding: 1px 6px;
+	color: white;
+	background-color: grey;
+}
+
+.severity-text.warning {
+	background-color: #e69238;
+}
+
+.severity-text.error {
+	background-color: #a61d01;
 }
