@@ -1,0 +1,23 @@
+.log-item {
+	margin-bottom: 3px;
+}
+
+.log-item .date {
+	color: #828282;
+}
+
+.severity-text {
+	display: inline-block;
+	font-weight: bold;
+	padding: 1px 6px;
+	color: white;
+	background-color: grey;
+}
+
+.severity-text.warning {
+	background-color: #e69238;
+}
+
+.severity-text.error {
+	background-color: #a61d01;
+}

@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { connect } from "react-redux";
 import { ReduxState } from "../../redux/types";
+import LogItem from "./LogItem";
 import "./log.css";
 
 type LogProps = {
@@ -12,9 +13,8 @@ const Log: FC<LogProps> = ({ redux }) => {
 
 	return (
 		<div className="log">
-			<h2>Log file: </h2>
 			{logs.map(({ datetime, severity, message }) => {
-				return <div>{`${datetime} - ${severity} - ${message}`}</div>;
+				return <LogItem datetime={datetime} severity={severity} message={message} />;
 			})}
 		</div>
 	);
