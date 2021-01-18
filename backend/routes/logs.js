@@ -19,7 +19,7 @@ router.get("/logs", function (req, res, next) {
 
 		// Parse the logs so we can return a nice easily parsed object to the front end
 		const parsedLogs = logs.map((line) => {
-			const datetime = line.substring(0, 23); // First 23 chars will be datetime.
+			const datetime = line.substring(0, 19); // First 23 chars will be datetime. Leaving the miliseconds off, make 19.
 			const severityAndMessage = line.substring(24, line.length).split(" "); // Rest is severity and message.
 			const severity = severityAndMessage.shift();
 			const message = severityAndMessage.join(" ");
