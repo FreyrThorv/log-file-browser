@@ -13,7 +13,9 @@ const Log: FC<LogProps> = ({ redux }) => {
 	return (
 		<div className="log">
 			<h2>Log file: </h2>
-			{JSON.stringify(logs)}
+			{logs.map(({ datetime, severity, message }) => {
+				return <div>{`${datetime} - ${severity} - ${message}`}</div>;
+			})}
 		</div>
 	);
 };
