@@ -29,8 +29,8 @@ cd ..
 Start dev environment
 
 ```
- cd ..
- sh dev.sh
+cd ..
+sh dev.sh
 ```
 
 Now you should be able to navigate to http://localhost:3000 in your browser and browse logs to your hearts content.
