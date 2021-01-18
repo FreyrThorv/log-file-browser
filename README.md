@@ -4,10 +4,10 @@ This UI helps you browses log files.
 
 ## Getting started
 
-Pull down code (TODO: make this easy)
+Pull down code
 
 ```
-git clone ....
+git clone git@github.com:FreyrThorv/log-file-browser.git
 ```
 
 Install back-end dependencies
