@@ -8,6 +8,6 @@ export interface ReduxState {
 
 interface LogItem {
 	datetime: string;
-	severity: string;
+	severity: "INFO" | "WARNING" | "ERROR";
 	message: string;
 }
