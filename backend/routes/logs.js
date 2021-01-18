@@ -38,7 +38,6 @@ router.get("/logs", function (req, res, next) {
 		res.send({
 			logs: parsedLogs,
 			total: parsedLogs.length,
-			errorCount,
 			infoCount,
 			warningCount,
 			errorCount,
