@@ -1,18 +1,27 @@
-import React from "react";
-import useFetch from "../../hooks/useFetch";
+import React, { FC } from "react";
+import { connect } from "react-redux";
+import { ReduxState } from "../../redux/types";
 import "./log.css";
 
-const Log = () => {
-	const [response, loading, error] = useFetch("/api/logs");
+type LogProps = {
+	redux: ReduxState;
+};
+
+const Log: FC<LogProps> = ({ redux }) => {
+	const { logs } = redux;
 
 	return (
 		<div className="log">
-			<h2>Log</h2>
-			{JSON.stringify(response)}
-			{loading && "Loading"}
-			{error && "Error"}
+			<h2>Log file: </h2>
+			{JSON.stringify(logs)}
 		</div>
 	);
 };
 
-export default Log;
+const mapStateToProps = (state: ReduxState) => {
+	return {
+		redux: state,
+	};
+};
+
+export default connect(mapStateToProps)(Log);
