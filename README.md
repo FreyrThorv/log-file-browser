@@ -12,6 +12,7 @@ Clone the project from Github
 
 ```bash
 git clone git@github.com:FreyrThorv/log-file-browser.git
+cd log-file-browser
 ```
 
 Install back-end dependencies
