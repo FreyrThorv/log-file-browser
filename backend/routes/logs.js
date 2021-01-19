@@ -18,22 +18,24 @@ router.get("/logs", function (req, res, next) {
 		const logs = data.split("\n");
 
 		// Parse the logs so we can return a nice easily parsed object to the front end
-		const parsedLogs = logs.map((line) => {
-			const datetime = line.substring(0, 19); // First 23 chars will be datetime. Leaving the miliseconds off, make 19.
-			const severityAndMessage = line.substring(24, line.length).split(" "); // Rest is severity and message.
-			const severity = severityAndMessage.shift();
-			const message = severityAndMessage.join(" ");
+		const parsedLogs = logs
+			.map((line) => {
+				const datetime = line.substring(0, 19); // First 23 chars will be datetime. Leaving the miliseconds off, make 19.
+				const severityAndMessage = line.substring(24, line.length).split(" "); // Rest is severity and message.
+				const severity = severityAndMessage.shift();
+				const message = severityAndMessage.join(" ");
 
-			if (severity === "INFO") {
-				infoCount++;
-			} else if (severity === "WARNING") {
-				warningCount++;
-			} else if (severity === "ERROR") {
-				errorCount++;
-			}
+				if (severity === "INFO") {
+					infoCount++;
+				} else if (severity === "WARNING") {
+					warningCount++;
+				} else if (severity === "ERROR") {
+					errorCount++;
+				}
 
-			return { datetime, severity, message };
-		});
+				return { datetime, severity, message };
+			})
+			.reverse();
 
 		res.send({
 			logs: parsedLogs,
