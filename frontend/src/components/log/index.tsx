@@ -13,8 +13,8 @@ const Log: FC<LogProps> = ({ redux }) => {
 
 	return (
 		<div className="log">
-			{logs.map(({ datetime, severity, message }) => {
-				return <LogItem datetime={datetime} severity={severity} message={message} />;
+			{logs.map(({ datetime, severity, message }, index) => {
+				return <LogItem key={datetime} datetime={datetime} severity={severity} message={message} />;
 			})}
 		</div>
 	);
