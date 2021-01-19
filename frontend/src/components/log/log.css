@@ -3,5 +3,6 @@
 }
 
 .log-item .date {
+	font-family: monospace;
 	color: #828282;
 }
