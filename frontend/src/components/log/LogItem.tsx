@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 
 type LogItemsProps = {
 	datetime: string;
@@ -6,13 +6,13 @@ type LogItemsProps = {
 	message: string;
 };
 
-const LogItem: FC<LogItemsProps> = ({ datetime, severity, message }) => {
+const LogItem: FC<LogItemsProps> = memo(({ datetime, severity, message }) => {
 	return (
 		<div className="log-item">
 			<span className="date">{datetime}</span>{" "}
 			<span className={`severity-text ${severity.toLowerCase()}`}>{severity}</span> {message}
 		</div>
 	);
-};
+});
 
 export default LogItem;
