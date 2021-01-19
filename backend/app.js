@@ -33,7 +33,7 @@ module.exports = app;
 
 // This awkwardly placed code makes logs every n seconds.
 // This is to demonstrate how the front end can handle new data.
-const interval = 2;
+const interval = 3;
 console.log(`Making logs every ${interval} seconds`);
 const logFilePath = path.resolve(__dirname, "log-file.txt");
 
