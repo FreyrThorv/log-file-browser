@@ -6,7 +6,7 @@
 	position: fixed;
 	background-color: white;
 	width: 940px;
-	height: 11%;
+	height: 90px;
 	padding: 0px 10px;
 	border-bottom: 2px solid lightgrey;
 	border-bottom: 1px solid lightgrey;
@@ -24,8 +24,15 @@
 	position: absolute;
 	top: 0px;
 	right: 20px;
+	width: 150px;
 }
 
 .pagination button {
+	padding: 4px 6px;
+	border: 0;
+	background-color: #e0e0e0;
+}
+
+.pagination .back-btn {
 	margin-right: 8px;
 }

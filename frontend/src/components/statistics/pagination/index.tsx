@@ -20,14 +20,21 @@ const Pagination: FC<PaginationType> = ({ redux }) => {
 		}
 	};
 
+	const onFirstPage = page === 1;
+	const onLastPage = page === pageNum;
+
 	return (
 		<div className="pagination">
 			<p>
 				{page} out of {pageNum} pages
 			</p>
 			<div>
-				{page !== 1 && <button onClick={() => changePageNumber(-1)}>back</button>}
-				{page !== pageNum && <button onClick={() => changePageNumber(1)}>next</button>}
+				<button disabled={onFirstPage} className="back-btn" onClick={() => changePageNumber(-1)}>
+					← back
+				</button>
+				<button disabled={onLastPage} className="next-btn" onClick={() => changePageNumber(1)}>
+					next →
+				</button>
 			</div>
 		</div>
 	);
