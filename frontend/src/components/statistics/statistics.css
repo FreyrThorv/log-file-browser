@@ -1,5 +1,5 @@
 .stats-container {
-	height: 95px;
+	height: 100px;
 }
 
 .stats {
@@ -35,6 +35,11 @@
 	padding: 4px 6px;
 	border: 0;
 	background-color: #e0e0e0;
+	cursor: pointer;
+}
+
+.pagination button:disabled {
+	cursor: initial;
 }
 
 .pagination .back-btn {
