@@ -22,9 +22,13 @@
 
 .pagination {
 	position: absolute;
-	top: 0px;
+	top: 4px;
 	right: 20px;
 	width: 150px;
+}
+
+.pagination p {
+	margin-bottom: 8px;
 }
 
 .pagination button {
