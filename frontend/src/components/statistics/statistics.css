@@ -19,3 +19,13 @@
 .stats span {
 	margin-right: 5px;
 }
+
+.pagination {
+	position: absolute;
+	top: 0px;
+	right: 20px;
+}
+
+.pagination button {
+	margin-right: 8px;
+}

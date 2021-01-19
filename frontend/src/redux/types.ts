@@ -4,6 +4,7 @@ export interface ReduxState {
 	warningCount: number;
 	errorCount: number;
 	total: number;
+	page: number;
 }
 
 interface LogItem {

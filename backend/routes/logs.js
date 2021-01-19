@@ -7,6 +7,9 @@ const path = require("path");
 // depending on the situation, it might make sense practice defensive coding
 // which I have neglected for the sake of spending time on the front-end.
 router.get("/logs", function (req, res, next) {
+	if (!req.query.page) {
+		res.send({ message: "Validation error: send page number as a query string" }).statusCode(400);
+	}
 	const logFile = path.resolve(__dirname, "../", "log-file.txt");
 	fs.readFile(logFile, "utf8", function (err, data) {
 		if (err) throw err;
@@ -37,8 +40,13 @@ router.get("/logs", function (req, res, next) {
 			})
 			.reverse();
 
+		// Basic pagination logic
+		const { page } = req.query;
+		const toIndex = page * 100;
+		const fromIndex = toIndex - 100;
+
 		res.send({
-			logs: parsedLogs,
+			logs: parsedLogs.slice(fromIndex, toIndex),
 			total: parsedLogs.length,
 			infoCount,
 			warningCount,

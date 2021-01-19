@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import "./statistics.css";
 import { connect } from "react-redux";
 import { ReduxState } from "../../redux/types";
+import Pagination from "./pagination";
 
 type StatisticsProps = {
 	redux: ReduxState;
@@ -23,6 +24,7 @@ const Statistics: FC<StatisticsProps> = ({ redux }) => {
 					Errors: <span className="severity-text error">{errorCount}</span>
 				</span>
 				<span>Total: {total}</span>
+				<Pagination />
 			</div>
 		</div>
 	);
