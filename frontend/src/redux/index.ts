@@ -14,14 +14,9 @@ const initialState: ReduxState = {
 export const reducer = (state = initialState, action: { type: string; params: any }) => {
 	switch (action.type) {
 		case UPDATE_LOG_INFO:
-			return Object.assign({}, state, {
-				...action.params,
-			});
+			return { ...state, ...action.params };
 		case UPDATE_PAGE_NUMBER:
-			return Object.assign({}, state, {
-				page: action.params.page,
-			});
-
+			return { ...state, page: action.params.page };
 		default:
 			return state;
 	}
