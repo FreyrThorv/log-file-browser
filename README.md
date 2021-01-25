@@ -47,7 +47,7 @@ I put both front-end and back-end into the same project folder for the sake of s
 
 ## Future improvements
 
-The application fulfills the interview brief, but if I were building something for a team to use day-to-day, I had a few ideas for future imrpovements, including:
+The application fulfills the interview brief, but if I were building something for a team to use day-to-day, I had a few ideas for future improvements, including:
 
 - a severity and datetime filter
 - adding visual separation between hours for easier skimming
